@@ -37,7 +37,8 @@
               .when('/view2', {
                  controller: 'SimpleController',
                  templateUrl: 'Partials/View2.html'
-              });
+              })
+              .otherwise ({redirecTo: '/'});
         }
 
         function SimpleFactory(){
