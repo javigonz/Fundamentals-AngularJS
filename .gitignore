@@ -1,0 +1,8 @@
+node_modules
+bower_components
+FundamentalsAngularJS.sublime-project
+FundamentalsAngularJS.sublime-workspace
+npm-debug.log
+.DS_Store
+app/lib
+dist

@@ -1,0 +1,28 @@
+{
+  "name": "Fundamentals with AngularJS",
+  "version": "0.0.1",
+  "description": "Start with AngularJS",
+  "author": "Javier Gonzalez <javie.gonzalez@gmail.com> http://www.termicadesign.com",
+  "keywords": [
+    "AngularJS",
+    "webapp",
+    "gulp",
+    "javascript"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "connect-history-api-fallback": "0.0.4",
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.0.6",
+    "gulp-jshint": "^1.9.0",
+    "jshint-stylish": "^1.0.0"
+  }
+}

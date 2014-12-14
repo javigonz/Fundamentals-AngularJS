@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html  ng-app="demoApp">
+<head>
+    <title>Fundamentals AngularJS</title>
+    
+</head>
+<body >
+    <div>
+       <div ng-view=""></div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    
+    <script>
+
+    var demoApp = /**
+    * demoApp Module
+
+    *
+    * Description
+    */
+    angular
+        .module('demoApp', ['ngRoute'])
+        .config(config)
+        .factory('SimpleFactory', SimpleFactory)
+        .controller('SimpleController', SimpleController);
+
+        function config ($routeProvider) {
+
+            $routeProvider
+              .when('/', {
+                 controller: 'SimpleController',
+                 templateUrl: 'Partials/View1.html'
+              })
+              .when('/view2', {
+                 controller: 'SimpleController',
+                 templateUrl: 'Partials/View2.html'
+              });
+        }
+
+        function SimpleFactory(){
+            var customers =[
+                    {name: 'John Smith', city: 'Malaga'},
+                    {name: 'Mckuly kulkin', city: 'Madrid'},
+                    {name: 'Anne Down', city: 'Sevilla'},
+                    {name: 'Josua Dove', city: 'Malaga'}
+                ];
+
+            var factory = {};
+
+            factory.getCustomers = function(){
+                return customers;
+            } 
+
+            factory.postCustomers = function(customer){
+
+            };
+
+            return factory;
+        }
+       
+
+        function SimpleController($scope, SimpleFactory){
+            
+             $scope.customers = [];
+
+             init();
+
+             function init(){
+                $scope.customers = SimpleFactory.getCustomers();
+             }  
+
+             $scope.addCustomer = function(){
+                $scope.customers.push(
+                    {
+                        name: $scope.newCustomer.name,
+                        city: $scope.newCustomer.city
+                    }
+                );
+             }   
+        }    
+        
+    </script>
+
+</body>
+</html>
